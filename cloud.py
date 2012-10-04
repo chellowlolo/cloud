@@ -12,6 +12,7 @@ def main():
     c.auth(os.environ['CLOUDAPP_USERNAME'], os.environ['CLOUDAPP_PASSWORD'])
     drop = c.upload_file(sys.argv[1])
     subprocess.Popen('echo %s | pbcopy' % drop['url'], shell=True)
+    print
     print drop['url']
     print drop['content_url']
     print
